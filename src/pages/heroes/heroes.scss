@@ -1,0 +1,46 @@
+@import '../../global-style//screen';
+
+#heroes {
+	display: flex;
+	flex-direction: column;
+
+	min-height: 400px;
+	background: #cf414b; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to left,
+		#852170,
+		#cf414b
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to left,
+		#852170,
+		#cf414b
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	.logo {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		h4 {
+			width: 300px;
+			padding: 10px;
+			background-color: black;
+			font-family: 'Rubik Mono One', sans-serif;
+			font-weight: 600;
+			color: wheat;
+		}
+	}
+	.list-card-heroes {
+		width: 100%;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-gap: 15px;
+		column-gap: 15px;
+		justify-items: center;
+		@include extra-small-device() {
+			grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+		}
+	}
+}

@@ -1,0 +1,33 @@
+@import '../../global-style//screen';
+#detail-image {
+	width: min(100%, 250px);
+	height: 250px;
+	background: #c31432; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to left,
+		#240b36,
+		#c31432
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to left,
+		#240b36,
+		#c31432
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	border-radius: 50%;
+
+	@include extra-small-device() {
+		width: 150px;
+		height: 150px;
+	}
+	.img-details {
+		width: min(100%, 250px);
+		height: 250px;
+		border-radius: 50%;
+		object-fit: cover;
+		@include extra-small-device() {
+			width: 150px;
+			height: 150px;
+		}
+	}
+}

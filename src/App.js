@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import './App.scss';
+
+import { Banner } from './component/banner/banner';
+import { LoadingSuspen } from './component/loadingComponent/loadingSuspen';
+
+const Hero = React.lazy(() => import('./pages/heroes/index'));
+const Herodetail = React.lazy(() => import('./pages/detailHero/index'));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Suspense fallback={<LoadingSuspen />}>
+			<div className="App">
+				<div className="layout">
+					<Banner />
+					<Router>
+						<Routes>
+							<Route exact="/" path="/" element={<Hero />} />
+							<Route path="/hero/:id" element={<Herodetail />} />
+						</Routes>
+					</Router>
+				</div>
+			</div>
+		</Suspense>
+	);
 }
 
 export default App;

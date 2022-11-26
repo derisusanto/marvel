@@ -1,0 +1,25 @@
+#suspen-loading {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	opacity: 0.5;
+
+	.content {
+		width: 200px;
+		height: 50px;
+		background-color: #000;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		label {
+			font-family: 'Rubik Mono One', sans-serif;
+			font-weight: 600;
+			color: wheat;
+		}
+	}
+}
